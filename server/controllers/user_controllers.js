@@ -2,11 +2,8 @@ import {
    addUserToMongoose,
    getAllUsersFromMongoose,
    getAUserFromMongoose,
-   // getActiveProductsFromMongoose,
-   // getByPriceRangeFromMongoose,
    updateUserFromMongoose,
    deleteUserFromMongoose,
-   // deleteAllProductsFromMongoose,
 } from "../services/bank.user.mongoose.js";
 
 export const addUser = async (req, res) => {
@@ -70,7 +67,7 @@ export const getUser = async (req, res) => {
 
 export const updateById = async (req, res) => {
    try {
-      const User = await updateUserFromMongoose( req.body );
+      const User = await updateUserFromMongoose(req.body);
       res.status(200).send(User);
    } catch (error) {
       res.status(404).send("error" + error);

@@ -3,4 +3,4 @@ import {accountSchema} from "./account.schema.js";
 
 const Account = model("Account", accountSchema);
 
-export {Account}
+export {Account};
