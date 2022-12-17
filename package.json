@@ -1,25 +1,29 @@
 {
-  "name": "12_deploy_render_app",
+  "name": "fullbankapp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "server": "nodemon index.js",
+    "deploy-server": "npm i",
+    "server": "node index.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "copy": "cp -r client/build server/",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "postbuild": "npm i --prefix client && npm run build --prefix client && npm run copy"
   },
   "keywords": [],
-  "author": "Mor Mordechai Ben",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.2.1",
     "concurrently": "^7.6.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongoose": "^6.8.0"
+    "mongoose": "^6.8.0",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
