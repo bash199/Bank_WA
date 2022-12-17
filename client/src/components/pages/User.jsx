@@ -130,6 +130,9 @@ const User = () => {
                   <span className="text-sm text-gray-500 dark:text-gray-400">
                      Age: {user.age}
                   </span>{" "}
+                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                     User ID: {user._id}
+                  </span>{" "}
                   <div className="mb-2">Accounts: {accounts.cash}</div>
                   {accounts &&
                      accounts.map((account) => (
