@@ -17,7 +17,7 @@ app.use("/api", indexBank);
 
 app.get('*', (req, res) => {
    console.log('aaa');
-   res.sendFile(path.resolve(publicPath, 'server','index.html'));
+   res.sendFile(path.resolve(__dirname, 'server','build','index.html'));
  });
 
  
