@@ -7,7 +7,7 @@ function NavBar() {
     <>
     <Navbar
   fluid={true}
-  rounded={true}
+  rounded={false}
 >
   <Navbar.Brand href="/">
     <img
@@ -23,14 +23,14 @@ function NavBar() {
     <Dropdown
       arrowIcon={false}
       inline={true}
-      label={<Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded={true}/>}
+      label={<Avatar alt="User settings" img="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80" rounded={true}/>}
     >
       <Dropdown.Header>
         <span className="block text-sm">
-          Bonnie Green
+          Bashir Tarif
         </span>
         <span className="block truncate text-sm font-medium">
-          name@flowbite.com
+          Bashir@test.com
         </span>
       </Dropdown.Header>
       <Dropdown.Item>
