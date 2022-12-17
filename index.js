@@ -11,12 +11,12 @@ const PORT = process.env.PORT || 8000;
 
 app.use(json());
 app.use(cors());
-const publicPath = path.join(__dirname, 'build');
+const publicPath = path.join(__dirname, 'server','build');
 app.use(express.static(publicPath));
 app.use("/api", indexBank);
 
 app.get('*', (req, res) => {
-   console.log('aaa');
+   console.log(__dirname);
    res.sendFile(path.resolve(__dirname, 'server','build','index.html'));
  });
 
