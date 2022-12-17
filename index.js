@@ -14,9 +14,9 @@ app.use(cors());
 const publicPath = path.join(__dirname, 'build');
 app.use(express.static(publicPath));
 app.use("/api", indexBank);
-app.get('*', (req, res) => {
-   res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
- });
+// app.get('*', (req, res) => {
+//    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+//  });
 
  
 app.listen(PORT, () => {
