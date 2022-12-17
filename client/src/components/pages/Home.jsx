@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Card } from 'flowbite-react'
-import axios from 'axios'
+import { Api } from '../../api/Api'
 import ListItemComp from '../ListItemComp'
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
 
   useEffect(()=>{
     const getUsers = async () =>{
-      const {data} = await axios.get("https://bashobankapp.onrender.com/api/users")
+      const {data} = await Api.get("/users")
       setUsers(data)
     }
     getUsers()

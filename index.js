@@ -1,24 +1,24 @@
 import express, {json} from "express";
-import cors from "cors"
-import './server/db/mongoose.js'
-import { indexBank } from "./server/routes/routes.js";
-import * as url from 'url';
-import path from 'path';
-const __dirname = url.fileURLToPath(new URL('./', import.meta.url));
+import cors from "cors";
+import "./server/db/mongoose.js";
+import {indexBank} from "./server/routes/routes.js";
+import * as url from "url";
+import path from "path";
+const __dirname = url.fileURLToPath(new URL("./", import.meta.url));
 
 const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use(json());
 app.use(cors());
-const publicPath = path.join(__dirname, 'build');
+const publicPath = path.join(__dirname, "build");
 app.use(express.static(publicPath));
 app.use("/api", indexBank);
-// app.get('*', (req, res) => {
-//    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-//  });
+app.get("*", (req, res) => {
+   console.log("i am in where u want me to be ");
+   res.sendFile(path.resolve(publicPath, "index.html"));
+});
 
- 
 app.listen(PORT, () => {
    console.log(` app listening on port ${PORT}`);
 });
