@@ -1,16 +1,14 @@
-import axios from "axios";
 import {Spinner} from "flowbite-react";
 import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
+import {Api} from "../api/Api";
 function ListItemComp({user, source}) {
    const [isLoading, setisLoading] = useState(false);
    const [balance, setBalance] = useState("");
    useEffect(() => {
       async function getBalance() {
          setisLoading(true);
-         const {data} = await axios.get(
-            `https://bashobankapp.onrender.com/api/accounts/${user.accounts[0]}`
-         );
+         const {data} = await Api.get(`/accounts/${user.accounts[0]}`);
          setBalance(data.cash);
          setisLoading(false);
       }
