@@ -6,16 +6,22 @@ function ListItemComp({user, source}) {
    const [isLoading, setisLoading] = useState(false);
    const [balance, setBalance] = useState("");
    useEffect(() => {
-      async function getBalance() {
-         setisLoading(true);
-         const {data} = await Api.get(`/accounts/${user.accounts[0]}`);
-         setBalance(data.cash);
-         setisLoading(false);
-      }
       if (user.accounts.length > 0) {
          getBalance();
       } else {
          setBalance("No Accounts");
+      }
+      async function getBalance() {
+         try {
+            setisLoading(true);
+            const {data} = await Api.get(`/accounts/${user.accounts[0]}`);
+            setBalance(data.cash);
+            setisLoading(false);
+         } catch (error) {
+            console.log(error);
+            setisLoading(false);
+            setBalance("No Info");
+         }
       }
    }, [user]);
    return (
